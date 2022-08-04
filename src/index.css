@@ -89,6 +89,7 @@ body {
 }
 
 .btn:disabled {
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -194,11 +195,27 @@ body,
 }
 
 .recognize-screen-container .question-image {
-  max-width: 550px;
+  margin: 0 auto;
+  max-width: 650px;
 }
 
 .recognize-screen-container .question-answers > .btn {
   flex: 1 0 100%;
+}
+
+.recognize-screen-container .question-answer--correct {
+  background-color: #27ae60;
+  color: #fff;
+}
+
+.recognize-screen-container .question-answer--incorrect {
+  background-color: #c0392b;
+  color: #fff;
+}
+
+.recognize-screen-container .question-answer--correct:disabled,
+.recognize-screen-container .question-answer--incorrect:disabled {
+  opacity: 1;
 }
 
 @media screen and (min-width: 500px) {

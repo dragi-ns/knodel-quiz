@@ -1,0 +1,141 @@
+[
+    {
+        "name": "Knedla sa šljivom",
+        "image": "sljiva.avif",
+        "ingredients": [
+            "Šljiva"
+        ]
+    },
+    {
+        "name": "Knedla sa kajsijom",
+        "image": "kajsija.avif",
+        "ingredients": [
+            "Kajsija"
+        ]
+    },
+    {
+        "name": "Knedla sa nutelom",
+        "image": "nutela.avif",
+        "ingredients": [
+            "Nutella",
+            "Plazma"
+        ]
+    },
+    {
+        "name": "Knedla Rafaelo",
+        "image": "rafaelo.avif",
+        "ingredients": [
+            "Bela čokolada",
+            "Lešnik"
+        ]
+    },
+    {
+        "name": "Slatka mala",
+        "image": "slatka-mala.avif",
+        "ingredients": [
+            "Krem od pomorandže",
+            "Crna čokolada",
+            "Zapečeni lešnik"
+        ]
+    },
+    {
+        "name": "Malina slatki sir",
+        "image": "malina-slatki-sir.avif",
+        "ingredients": [
+            "Malina",
+            "Slatki sir"
+        ]
+    },
+    {
+        "name": "Čoko malina",
+        "image": "coko-malina.avif",
+        "ingredients": [
+            "Crna čokolada",
+            "Malina"
+        ]
+    },
+    {
+        "name": "Čoko višnja",
+        "image": "coko-visnja.avif",
+        "ingredients": [
+            "Čokolada",
+            "Višnja"
+        ]
+    },
+    {
+        "name": "Amareti",
+        "image": "amareti.avif",
+        "ingredients": [
+            "Badem krem",
+            "Badem jezgro",
+            "Amaretti"
+        ]
+    },
+    {
+        "name": "Karamela",
+        "image": "karamela.avif",
+        "ingredients": [
+            "Karamela",
+            "Melčna belgijska čokolada",
+            "Kikiriki",
+            "Med",
+            "Orašasti polodovi"
+        ]
+    },
+    {
+        "name": "Marakuja - divlja kupina",
+        "image": "marakuja.avif",
+        "ingredients": [
+            "Marakuja",
+            "Divlje kupine",
+            "Maskarpone sir"
+        ]
+    },
+    {
+        "name": "Kraljica Marija",
+        "image": "kraljica-marija.avif",
+        "ingredients": [
+            "Orah krem",
+            "Jezgro oraha",
+            "Kakao",
+            "Karamelizovani šećer",
+            "Pečeni lešnik",
+            "Badem"
+        ]
+    },
+    {
+        "name": "Pistaći",
+        "image": "pistaci.avif",
+        "ingredients": [
+            "Pasta od pistaća",
+            "Mleveni pistać",
+            "Malina"
+        ]
+    },
+    {
+        "name": "Princeza sa Madagaskara",
+        "image": "princeza-sa-madagaskara.avif",
+        "ingredients": [
+            "Burbon vanila sa Madagaskara",
+            "Maskarpone sir",
+            "Bela čokolada",
+            "Jaje"
+        ]
+    },
+    {
+        "name": "Carska knedla",
+        "image": "carska-knedla.avif",
+        "ingredients": [
+            "Tri vrste belgijske čokolade",
+            "Francuski keks"
+        ]
+    },
+    {
+        "name": "Šumska jagoda",
+        "image": "sumska-jagoda.avif",
+        "ingredients": [
+            "Šumske jagode",
+            "Bela belgijska čokolada"
+        ]
+    }
+]
