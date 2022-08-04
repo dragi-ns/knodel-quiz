@@ -23,6 +23,13 @@ a {
   font-weight: bold;
 }
 
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
 :root {
   height: -webkit-fill-available;
 }
@@ -43,6 +50,8 @@ body {
     hsl(42deg 100% 54%) 89%,
     hsl(52deg 100% 48%) 100%
   );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
   height: -webkit-fill-available;
 }
@@ -61,6 +70,12 @@ body {
   flex-direction: column;
 }
 
+.buttons {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 .btn {
   color: #fff;
   background-color: transparent;
@@ -70,7 +85,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  transition: all 250ms ease;
+  transition: all 150ms ease;
 }
 
 .btn:disabled {
@@ -157,8 +172,43 @@ body,
   font-size: 1.8rem;
 }
 
-.start-screen-container .buttons {
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
+/*
+  Recognize screen
+*/
+.recognize-screen-container {
+  gap: 1rem;
+  text-align: center;
+}
+
+.recognize-screen-container h2 {
+  font-size: 1.5rem;
+}
+
+.recognize-screen-container .next-btn {
+  align-self: flex-end;
+  padding: 0.5rem 2.5rem;
+}
+
+.recognize-screen-container .question-indicator {
+  text-align: left;
+}
+
+.recognize-screen-container .question-image {
+  max-width: 550px;
+}
+
+.recognize-screen-container .question-answers > .btn {
+  flex: 1 0 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .recognize-screen-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .recognize-screen-container .question-answers > .btn {
+    flex-basis: calc(50% - 0.5rem);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
 }
