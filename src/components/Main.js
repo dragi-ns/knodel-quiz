@@ -1,11 +1,16 @@
 import StartScreen from './StartScreen';
 import RecognizeScreen from './RecognizeScreen';
 
-function Main() {
+function Main({ mode, handleModeChange }) {
   return (
     <main className="app-main">
-      {/* <StartScreen /> */}
-      <RecognizeScreen />
+      {!mode ? (
+        <StartScreen onClick={handleModeChange} />
+      ) : mode === 'recognize' ? (
+        <RecognizeScreen onClick={() => handleModeChange(null)} />
+      ) : (
+        <p>todo</p>
+      )}
     </main>
   );
 }

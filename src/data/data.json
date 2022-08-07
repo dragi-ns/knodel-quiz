@@ -1,29 +1,29 @@
 [
     {
-        "name": "Knedla sa šljivom",
-        "image": "sljiva.avif",
+        "name": "Šljiva",
+        "image": "knedla1.jpg",
         "ingredients": [
             "Šljiva"
         ]
     },
     {
-        "name": "Knedla sa kajsijom",
-        "image": "kajsija.avif",
+        "name": "Kajsija",
+        "image": "knedla2.jpg",
         "ingredients": [
             "Kajsija"
         ]
     },
     {
-        "name": "Knedla sa nutelom",
-        "image": "nutela.avif",
+        "name": "Nutela",
+        "image": "knedla3.jpg",
         "ingredients": [
             "Nutella",
             "Plazma"
         ]
     },
     {
-        "name": "Knedla Rafaelo",
-        "image": "rafaelo.avif",
+        "name": "Rafaelo",
+        "image": "knedla4.jpg",
         "ingredients": [
             "Bela čokolada",
             "Lešnik"
@@ -31,7 +31,7 @@
     },
     {
         "name": "Slatka mala",
-        "image": "slatka-mala.avif",
+        "image": "knedla5.jpg",
         "ingredients": [
             "Krem od pomorandže",
             "Crna čokolada",
@@ -40,7 +40,7 @@
     },
     {
         "name": "Malina slatki sir",
-        "image": "malina-slatki-sir.avif",
+        "image": "knedla6.jpg",
         "ingredients": [
             "Malina",
             "Slatki sir"
@@ -48,7 +48,7 @@
     },
     {
         "name": "Čoko malina",
-        "image": "coko-malina.avif",
+        "image": "knedla7.jpg",
         "ingredients": [
             "Crna čokolada",
             "Malina"
@@ -56,7 +56,7 @@
     },
     {
         "name": "Čoko višnja",
-        "image": "coko-visnja.avif",
+        "image": "knedla8.jpg",
         "ingredients": [
             "Čokolada",
             "Višnja"
@@ -64,7 +64,7 @@
     },
     {
         "name": "Amareti",
-        "image": "amareti.avif",
+        "image": "knedla9.jpg",
         "ingredients": [
             "Badem krem",
             "Badem jezgro",
@@ -73,7 +73,7 @@
     },
     {
         "name": "Karamela",
-        "image": "karamela.avif",
+        "image": "knedla10.jpg",
         "ingredients": [
             "Karamela",
             "Melčna belgijska čokolada",
@@ -84,7 +84,7 @@
     },
     {
         "name": "Marakuja - divlja kupina",
-        "image": "marakuja.avif",
+        "image": "knedla11.jpg",
         "ingredients": [
             "Marakuja",
             "Divlje kupine",
@@ -93,7 +93,7 @@
     },
     {
         "name": "Kraljica Marija",
-        "image": "kraljica-marija.avif",
+        "image": "knedla12.jpg",
         "ingredients": [
             "Orah krem",
             "Jezgro oraha",
@@ -105,7 +105,7 @@
     },
     {
         "name": "Pistaći",
-        "image": "pistaci.avif",
+        "image": "knedla13.jpg",
         "ingredients": [
             "Pasta od pistaća",
             "Mleveni pistać",
@@ -114,7 +114,7 @@
     },
     {
         "name": "Princeza sa Madagaskara",
-        "image": "princeza-sa-madagaskara.avif",
+        "image": "knedla14.jpg",
         "ingredients": [
             "Burbon vanila sa Madagaskara",
             "Maskarpone sir",
@@ -124,7 +124,7 @@
     },
     {
         "name": "Carska knedla",
-        "image": "carska-knedla.avif",
+        "image": "knedla15.jpg",
         "ingredients": [
             "Tri vrste belgijske čokolade",
             "Francuski keks"
@@ -132,7 +132,7 @@
     },
     {
         "name": "Šumska jagoda",
-        "image": "sumska-jagoda.avif",
+        "image": "knedla16.jpg",
         "ingredients": [
             "Šumske jagode",
             "Bela belgijska čokolada"

@@ -1,7 +1,9 @@
-function Header() {
+function Header({ onClick }) {
   return (
     <header className="app-header">
-      <h1 className="logo text-shadow">Knödel Quiz</h1>
+      <h1 className="logo text-shadow" onClick={onClick}>
+        Knödel Quiz
+      </h1>
     </header>
   );
 }

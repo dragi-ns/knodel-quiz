@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import ReactConfetti from 'react-confetti';
 import { nanoid } from 'nanoid';
 import shuffle from 'shuffle-array';
-import classNames from 'classnames';
+import Question from './Question';
 import data from '../data/data.json';
+import Loading from './Loading';
+import GameEndScreen from './GameEndScreen';
 
-function RecognizeScreen() {
+function RecognizeScreen({ onClick }) {
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -71,70 +72,57 @@ function RecognizeScreen() {
     });
   }
 
+  function nextQuestion() {
+    setCurrentIndex((prevIndex) => prevIndex + 1);
+  }
+
   const currentQuestion = questions[currentIndex];
+  const disableNext =
+    !currentQuestion ||
+    currentQuestion.answers.every((answer) => !answer.selected);
+  const isGameEnded = !currentQuestion && currentIndex >= questions.length;
+  let correctCount = 0;
+  if (isGameEnded) {
+    correctCount = questions.reduce((count, question) => {
+      if (
+        question.answers.find((answer) => answer.selected && answer.correct)
+      ) {
+        return count + 1;
+      }
+      return count;
+    }, 0);
+  }
+
   return (
     <div className="recognize-screen-container col">
-      {!currentQuestion ? (
-        <>
-          <ReactConfetti />
-          <h2>
-            Bravo, pogodili ste{' '}
-            {questions.reduce((count, question) => {
-              if (
-                question.answers.find(
-                  (answer) => answer.selected && answer.correct
-                )
-              ) {
-                return count + 1;
-              }
-              return count;
-            }, 0)}{' '}
-            od {questions.length} knedli!
-          </h2>
-        </>
+      {!isGameEnded && !currentQuestion ? (
+        <Loading />
       ) : (
         <>
-          <h2 className="text-shadow">Kako se zove knedla sa slike?</h2>
-          <p className="question-indicator">
-            Knedla {currentIndex + 1}/{questions.length}
-          </p>
-          <div className="question-image">
-            <img
-              src={currentQuestion && `./images/${currentQuestion.image}`}
-              alt="slika knedle"
+          {isGameEnded ? (
+            <GameEndScreen
+              correctCount={correctCount}
+              totalCount={questions.length}
+              onClick={onClick}
             />
-          </div>
-          <div className="question-answers buttons row">
-            {currentQuestion &&
-              currentQuestion.answers.map((answer) => (
-                <button
-                  key={answer.id}
-                  disabled={
-                    !currentQuestion ||
-                    currentQuestion.answers.some((answer) => answer.selected)
-                  }
-                  className={classNames({
-                    btn: true,
-                    'btn--secondary': true,
-                    'question-answer--correct':
-                      answer.selected && answer.correct,
-                    'question-answer--incorrect':
-                      answer.selected && !answer.correct,
-                  })}
-                  onClick={() => toggleSelect(answer.id)}>
-                  {answer.name}
-                </button>
-              ))}
-          </div>
-          <button
-            disabled={
-              !currentQuestion ||
-              currentQuestion.answers.every((answer) => !answer.selected)
-            }
-            className="btn btn--primary next-btn"
-            onClick={() => setCurrentIndex((prevIndex) => prevIndex + 1)}>
-            Dalje
-          </button>
+          ) : (
+            <>
+              <Question
+                title="Kako se zove knedla sa slike?"
+                currentRound={currentIndex + 1}
+                totalRounds={questions.length}
+                question={currentQuestion}
+                onClick={toggleSelect}
+              />
+
+              <button
+                disabled={disableNext}
+                className="btn btn--primary next-btn"
+                onClick={nextQuestion}>
+                Dalje
+              </button>
+            </>
+          )}
         </>
       )}
     </div>
