@@ -5,6 +5,7 @@ import Question from './Question';
 import data from '../data/data.json';
 import Loading from './Loading';
 import GameEndScreen from './GameEndScreen';
+import RecognizeQuestionAnswer from './RecognizeQuestionAnswer';
 
 function RecognizeScreen({ onClick }) {
   const [questions, setQuestions] = useState([]);
@@ -95,7 +96,7 @@ function RecognizeScreen({ onClick }) {
 
   return (
     <div className="recognize-screen-container col">
-      {!isGameEnded && !currentQuestion ? (
+      {!isGameEnded && !currentQuestion && currentIndex > 0 ? (
         <Loading />
       ) : (
         <>
@@ -111,7 +112,9 @@ function RecognizeScreen({ onClick }) {
                 title="Kako se zove knedla sa slike?"
                 currentRound={currentIndex + 1}
                 totalRounds={questions.length}
-                question={currentQuestion}
+                questionImage={currentQuestion.image}
+                questionAnswers={currentQuestion.answers}
+                QuestionAnswerComponent={RecognizeQuestionAnswer}
                 onClick={toggleSelect}
               />
 

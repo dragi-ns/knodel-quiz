@@ -1,5 +1,6 @@
 import StartScreen from './StartScreen';
 import RecognizeScreen from './RecognizeScreen';
+import IngredientsScreen from './IngredientsScreen';
 
 function Main({ mode, handleModeChange }) {
   return (
@@ -9,7 +10,7 @@ function Main({ mode, handleModeChange }) {
       ) : mode === 'recognize' ? (
         <RecognizeScreen onClick={() => handleModeChange(null)} />
       ) : (
-        <p>todo</p>
+        <IngredientsScreen onClick={() => handleModeChange(null)} />
       )}
     </main>
   );

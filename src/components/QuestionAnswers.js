@@ -1,15 +1,16 @@
-import QuestionAnswer from './QuestionAnswer';
-
-function QuestionAnswers({ answers, onClick }) {
-  const someAnswerSelected = answers.some((answer) => answer.selected);
-
+function QuestionAnswers({
+  QuestionAnswerComponent,
+  answers,
+  disabled,
+  onClick,
+}) {
   return (
     <div className="question-answers buttons row">
       {answers.map((answer) => (
-        <QuestionAnswer
+        <QuestionAnswerComponent
           key={answer.id}
           answer={answer}
-          someAnswerSelected={someAnswerSelected}
+          disabled={disabled ?? answers.some((answer) => answer.selected)}
           onClick={onClick}
         />
       ))}

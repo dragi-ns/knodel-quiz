@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 
-function QuestionAnswer({ answer, someAnswerSelected, onClick }) {
+function RecognizeQuestionAnswer({ answer, disabled, onClick }) {
   return (
     <button
-      disabled={someAnswerSelected}
+      disabled={disabled}
       className={classNames({
         btn: true,
         'btn--secondary': true,
-        'question-answer--correct': someAnswerSelected && answer.correct,
+        'question-answer--correct': disabled && answer.correct,
         'question-answer--incorrect': answer.selected && !answer.correct,
       })}
       onClick={() => onClick(answer.id)}>
@@ -16,4 +16,4 @@ function QuestionAnswer({ answer, someAnswerSelected, onClick }) {
   );
 }
 
-export default QuestionAnswer;
+export default RecognizeQuestionAnswer;

@@ -17,7 +17,7 @@
         "name": "Nutela",
         "image": "knedla3.jpg",
         "ingredients": [
-            "Nutella",
+            "Nutela",
             "Plazma"
         ]
     },
@@ -26,6 +26,7 @@
         "image": "knedla4.jpg",
         "ingredients": [
             "Bela čokolada",
+            "Kokos",
             "Lešnik"
         ]
     },
@@ -51,7 +52,8 @@
         "image": "knedla7.jpg",
         "ingredients": [
             "Crna čokolada",
-            "Malina"
+            "Malina",
+            "Oreo keks"
         ]
     },
     {
@@ -87,7 +89,7 @@
         "image": "knedla11.jpg",
         "ingredients": [
             "Marakuja",
-            "Divlje kupine",
+            "Divlja kupina",
             "Maskarpone sir"
         ]
     },
@@ -108,7 +110,7 @@
         "image": "knedla13.jpg",
         "ingredients": [
             "Pasta od pistaća",
-            "Mleveni pistać",
+            "Mleveni pistaći",
             "Malina"
         ]
     },
@@ -119,7 +121,7 @@
             "Burbon vanila sa Madagaskara",
             "Maskarpone sir",
             "Bela čokolada",
-            "Jaje"
+            "Francuski keks"
         ]
     },
     {

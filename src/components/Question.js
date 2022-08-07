@@ -2,7 +2,16 @@ import QuestionHeader from './QuestionHeader';
 import QuestionImage from './QuestionImage';
 import QuestionAnswers from './QuestionAnswers';
 
-function Question({ title, currentRound, totalRounds, question, onClick }) {
+function Question({
+  title,
+  currentRound,
+  totalRounds,
+  questionImage,
+  questionAnswers,
+  QuestionAnswerComponent,
+  disabled = null,
+  onClick,
+}) {
   return (
     <>
       <QuestionHeader
@@ -10,8 +19,13 @@ function Question({ title, currentRound, totalRounds, question, onClick }) {
         currentRound={currentRound}
         totalRounds={totalRounds}
       />
-      <QuestionImage src={question.image} />
-      <QuestionAnswers answers={question.answers} onClick={onClick} />
+      <QuestionImage src={questionImage} />
+      <QuestionAnswers
+        QuestionAnswerComponent={QuestionAnswerComponent}
+        answers={questionAnswers}
+        disabled={disabled}
+        onClick={onClick}
+      />
     </>
   );
 }
