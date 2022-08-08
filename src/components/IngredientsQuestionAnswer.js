@@ -7,6 +7,7 @@ function IngredientsQuestionAnswer({ answer, disabled, onClick }) {
       className={classNames({
         btn: true,
         'btn--secondary': true,
+        'question-answer': true,
         'question-answer--selected': !disabled && answer.selected,
         'question-answer--missed':
           disabled && !answer.selected && answer.correct,

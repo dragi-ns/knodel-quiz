@@ -113,7 +113,6 @@ function IngredientsScreen({ onClick }) {
 
   const currentQuestion = questions[currentIndex];
   const isGameEnded = !currentQuestion && currentIndex >= questions.length;
-  console.log(correctCount);
 
   return (
     <div className="ingredients-screen-container col">

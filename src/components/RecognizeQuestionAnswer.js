@@ -7,6 +7,7 @@ function RecognizeQuestionAnswer({ answer, disabled, onClick }) {
       className={classNames({
         btn: true,
         'btn--secondary': true,
+        'question-answer': true,
         'question-answer--correct': disabled && answer.correct,
         'question-answer--incorrect': answer.selected && !answer.correct,
       })}

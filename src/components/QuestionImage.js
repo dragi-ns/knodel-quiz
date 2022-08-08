@@ -5,8 +5,8 @@ function QuestionImage({ src }) {
     <div className="question-image">
       <ProgressiveImg
         key={`./images/${src}`}
-        src={`./images/${src}`}
-        placeholderSrc={`./images/small-${src}`}
+        src={`${process.env.PUBLIC_URL}/images/${src}`}
+        placeholderSrc={`${process.env.PUBLIC_URL}/images/small-${src}`}
         width="1200"
         height="675"
       />

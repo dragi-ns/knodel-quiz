@@ -1,5 +1,3 @@
-/* TODO: Clean up CSS */
-
 @import-normalize;
 
 *,
@@ -119,6 +117,16 @@ body {
   }
 }
 
+.next-btn {
+  align-self: flex-end;
+  padding: 0.5rem 2.5rem;
+}
+
+.play-again-btn {
+  align-self: center;
+  font-size: 1.1rem;
+}
+
 .loading-overlay {
   position: fixed;
   top: 0;
@@ -215,6 +223,52 @@ body,
 }
 
 /*
+ Question
+*/
+
+.question-title {
+  font-size: 1.5rem;
+}
+
+.question-indicator {
+  text-align: left;
+}
+
+.question-image {
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+.question-answer--selected {
+  background-color: #fff;
+}
+
+.question-answer--missed {
+  background-color: #f1c40f;
+}
+
+.question-answer--correct {
+  background-color: #27ae60;
+  color: #fff;
+}
+
+.question-answer--incorrect {
+  background-color: #c0392b;
+  color: #fff;
+}
+.question-answer--missed:disabled,
+.question-answer--correct:disabled,
+.question-answer--incorrect:disabled {
+  opacity: 1;
+}
+
+@media screen and (min-width: 500px) {
+  .question-title {
+    font-size: 1.8rem;
+  }
+}
+
+/*
   Recognize screen
 */
 .recognize-screen-container {
@@ -222,58 +276,16 @@ body,
   text-align: center;
 }
 
-.recognize-screen-container h2 {
-  font-size: 1.5rem;
-}
-
-.recognize-screen-container .next-btn {
-  align-self: flex-end;
-  padding: 0.5rem 2.5rem;
-}
-
-.recognize-screen-container .question-indicator {
-  text-align: left;
-}
-
-.recognize-screen-container .question-image {
-  margin: 0 auto;
-  max-width: 650px;
-}
-
-.recognize-screen-container .question-answers > .btn {
+.recognize-screen-container .question-answer {
   flex: 1 0 100%;
 }
 
-.recognize-screen-container .question-answer--correct {
-  background-color: #27ae60;
-  color: #fff;
-}
-
-.recognize-screen-container .question-answer--incorrect {
-  background-color: #c0392b;
-  color: #fff;
-}
-
-.recognize-screen-container .question-answer--correct:disabled,
-.recognize-screen-container .question-answer--incorrect:disabled {
-  opacity: 1;
-}
-
 @media screen and (min-width: 500px) {
-  .recognize-screen-container h2 {
-    font-size: 1.8rem;
-  }
-
-  .recognize-screen-container .question-answers > .btn {
+  .recognize-screen-container .question-answer {
     flex-basis: calc(50% - 0.5rem);
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
   }
-}
-
-.play-again-btn {
-  align-self: center;
-  font-size: 1.1rem;
 }
 
 /*
@@ -285,9 +297,8 @@ body,
   text-align: center;
 }
 
-.ingredients-screen-container .question-image {
-  margin: 0 auto;
-  max-width: 650px;
+.ingredients-screen-container .question-indicator {
+  text-align: center;
 }
 
 .ingredients-screen-container .question-answers {
@@ -297,38 +308,7 @@ body,
   align-items: flex-start;
 }
 
-.ingredients-screen-container .question-answers > .btn {
+.ingredients-screen-container .question-answer {
   flex: 1 0 auto;
   white-space: nowrap;
-}
-
-.ingredients-screen-container
-  .question-answers
-  > .btn.question-answer--selected {
-  background-color: #fff;
-}
-
-.ingredients-screen-container .question-answer--missed {
-  background-color: #f1c40f;
-}
-
-.ingredients-screen-container .question-answer--correct {
-  background-color: #27ae60;
-  color: #fff;
-}
-
-.ingredients-screen-container .question-answer--incorrect {
-  background-color: #c0392b;
-  color: #fff;
-}
-
-.ingredients-screen-container .question-answer--missed:disabled,
-.ingredients-screen-container .question-answer--correct:disabled,
-.ingredients-screen-container .question-answer--incorrect:disabled {
-  opacity: 1;
-}
-
-.ingredients-screen-container .next-btn {
-  align-self: flex-end;
-  padding: 0.5rem 2.5rem;
 }
