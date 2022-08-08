@@ -21,12 +21,17 @@ function IngredientsScreen({ onClick }) {
   }, []);
 
   useEffect(() => {
-    const currentQuestion = questions[currentIndex];
+    if (!check) {
+      return;
+    }
+
     if (
-      currentQuestion &&
-      currentQuestion.ingredients.every((ingredient) =>
-        ingredients.find((item) => item.name === ingredient && item.selected)
-      )
+      ingredients
+        .filter((ingredient) => ingredient.selected)
+        .every((ingredient) => ingredient.correct) &&
+      ingredients
+        .filter((ingredient) => ingredient.correct)
+        .every((ingredient) => ingredient.selected)
     ) {
       setCorrectCount((prevCount) => prevCount + 1);
     }
