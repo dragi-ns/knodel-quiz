@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 
 function RecognizeQuestionAnswer({ answer, disabled, onClick }) {
+  const { t } = useTranslation('knodel-names');
   return (
     <button
       disabled={disabled}
@@ -12,7 +14,7 @@ function RecognizeQuestionAnswer({ answer, disabled, onClick }) {
         'question-answer--incorrect': answer.selected && !answer.correct,
       })}
       onClick={() => onClick(answer.id)}>
-      {answer.name}
+      {t(answer.name)}
     </button>
   );
 }

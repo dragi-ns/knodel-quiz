@@ -1,0 +1,15 @@
+{
+    "knödel": "Knedla",
+    "title": "Koliko dobro poznajete Ferdinand knedle?",
+    "recognize-title": "Kako se zove knedla sa slike?",
+    "ingredients-title": "Šta se nalazi u knedli sa slike?",
+    "end-title": "{{msg}} Pogodili ste {{correctCount}} od {{totalCount}} knedli! ({{percentage}}%)",
+    "end-best": "Ferdinandtstično!",
+    "end-average": "Bravo!",
+    "end-worst": "Može to bolje.",
+    "recognize-btn": "Prepoznaj knedlu 🧐",
+    "ingredients-btn": "Šta je unutra? 🤔",
+    "next-btn": "Dalje",
+    "check-btn": "Proveri",
+    "play-again-btn": "Igraj ponovo"
+}

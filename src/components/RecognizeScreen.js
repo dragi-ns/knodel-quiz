@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { nanoid } from 'nanoid';
+import { useTranslation } from 'react-i18next';
 import shuffle from 'shuffle-array';
 import Question from './Question';
 import RecognizeQuestionAnswer from './RecognizeQuestionAnswer';
@@ -7,6 +8,7 @@ import GameEndScreen from './GameEndScreen';
 import data from '../data/data.json';
 
 function RecognizeScreen({ onClick }) {
+  const { t } = useTranslation('main');
   const correctAnswersCount = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [questions, setQuestions] = useState(formatData(data));
@@ -91,7 +93,7 @@ function RecognizeScreen({ onClick }) {
       ) : (
         <>
           <Question
-            title="Kako se zove knedla sa slike?"
+            title={t('recognize-title')}
             currentRound={currentIndex + 1}
             totalRounds={questions.length}
             questionImage={currentQuestion.image}
@@ -104,7 +106,7 @@ function RecognizeScreen({ onClick }) {
             disabled={disableNext}
             className="btn btn--primary next-btn"
             onClick={nextQuestion}>
-            Dalje
+            {t('next-btn')}
           </button>
         </>
       )}

@@ -1,6 +1,8 @@
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 function IngredientsQuestionAnswer({ answer, disabled, onClick }) {
+  const { t } = useTranslation('ingredients');
   return (
     <button
       disabled={disabled}
@@ -17,7 +19,7 @@ function IngredientsQuestionAnswer({ answer, disabled, onClick }) {
           disabled && answer.selected && !answer.correct,
       })}
       onClick={() => onClick(answer.id)}>
-      {answer.name}
+      {t(answer.name)}
     </button>
   );
 }

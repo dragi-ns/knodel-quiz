@@ -5,8 +5,10 @@ import Question from './Question';
 import IngredientsQuestionAnswer from './IngredientsQuestionAnswer';
 import GameEndScreen from './GameEndScreen';
 import data from '../data/data.json';
+import { useTranslation } from 'react-i18next';
 
 function IngredientsScreen({ onClick }) {
+  const { t } = useTranslation('main');
   const questions = useRef(formatData(data));
   const correctAnswersCount = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -119,7 +121,7 @@ function IngredientsScreen({ onClick }) {
       ) : (
         <>
           <Question
-            title="Šta se nalazi u ovoj knedli?"
+            title={t('ingredients-title')}
             currentRound={currentIndex + 1}
             totalRounds={questions.current.length}
             questionImage={currentQuestion.image}
@@ -131,7 +133,7 @@ function IngredientsScreen({ onClick }) {
           <button
             className="btn btn--primary next-btn"
             onClick={check ? nextQuestion : checkAnswers}>
-            {check ? 'Dalje' : 'Proveri'}
+            {check ? t('next-btn') : t('check-btn')}
           </button>
         </>
       )}

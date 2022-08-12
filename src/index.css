@@ -198,6 +198,11 @@ body,
   padding: 15px;
 }
 
+.app-header {
+  align-items: center;
+  justify-content: space-between;
+}
+
 .app-header .logo {
   font-size: 2.5rem;
   font-family: 'Courgette', cursive;
@@ -275,6 +280,7 @@ body,
 .recognize-screen-container {
   gap: 1rem;
   text-align: center;
+  max-width: 650px;
 }
 
 .recognize-screen-container .question-answer {

@@ -1,0 +1,15 @@
+{
+    "knödel": "Knödel",
+    "title": "How well do you know Ferdinand knödel?",
+    "recognize-title": "What is the name of knödel in the picture?",
+    "ingredients-title": "What is in knödel in the picture?",
+    "end-title": "{{msg}} You recognized {{correctCount}} of {{totalCount}} knödel! ({{percentage}}%)",
+    "end-best": "Ferdinandstically!",
+    "end-average": "Good job!",
+    "end-worst": "You can do better than this.",
+    "recognize-btn": "Recognize knödel 🧐",
+    "ingredients-btn": "What's inside? 🤔",
+    "next-btn": "Next",
+    "check-btn": "Check",
+    "play-again-btn": "Play again"
+}
