@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/knodel-quiz/static/css/main.d4b801cb.css",
-    "main.js": "/knodel-quiz/static/js/main.74e0bf77.js",
+    "main.css": "/knodel-quiz/static/css/main.a7cb447a.css",
+    "main.js": "/knodel-quiz/static/js/main.066b5a59.js",
     "index.html": "/knodel-quiz/index.html",
-    "main.d4b801cb.css.map": "/knodel-quiz/static/css/main.d4b801cb.css.map",
-    "main.74e0bf77.js.map": "/knodel-quiz/static/js/main.74e0bf77.js.map"
+    "main.a7cb447a.css.map": "/knodel-quiz/static/css/main.a7cb447a.css.map",
+    "main.066b5a59.js.map": "/knodel-quiz/static/js/main.066b5a59.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4b801cb.css",
-    "static/js/main.74e0bf77.js"
+    "static/css/main.a7cb447a.css",
+    "static/js/main.066b5a59.js"
   ]
 }
