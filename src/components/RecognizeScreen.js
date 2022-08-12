@@ -2,16 +2,19 @@ import { useState, useRef } from 'react';
 import { nanoid } from 'nanoid';
 import { useTranslation } from 'react-i18next';
 import shuffle from 'shuffle-array';
+import useTimer from './useTimer';
 import Question from './Question';
 import RecognizeQuestionAnswer from './RecognizeQuestionAnswer';
 import GameEndScreen from './GameEndScreen';
 import data from '../data/data.json';
 
 function RecognizeScreen({ onClick }) {
-  const { t } = useTranslation('main');
   const correctAnswersCount = useRef(0);
+  const { t } = useTranslation('main');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [questions, setQuestions] = useState(formatData(data));
+  const [stopTimer, setStopTimer] = useState(false);
+  const seconds = useTimer(0, stopTimer);
 
   function formatData(data) {
     function formatAnswers(correctAnswer, incorrectAnswers) {
@@ -79,15 +82,21 @@ function RecognizeScreen({ onClick }) {
   }
 
   const currentQuestion = questions[currentIndex];
+  if (!currentQuestion && !stopTimer) {
+    setStopTimer(true);
+  }
+
   const disableNext =
     currentQuestion &&
     currentQuestion.answers.every((answer) => !answer.selected);
+
   return (
     <div className="recognize-screen-container col">
       {!currentQuestion ? (
         <GameEndScreen
           correctCount={correctAnswersCount.current}
           totalCount={questions.length}
+          currentSeconds={seconds}
           onClick={onClick}
         />
       ) : (
@@ -96,6 +105,7 @@ function RecognizeScreen({ onClick }) {
             title={t('recognize-title')}
             currentRound={currentIndex + 1}
             totalRounds={questions.length}
+            currentSeconds={seconds}
             questionImage={currentQuestion.image}
             questionAnswers={currentQuestion.answers}
             QuestionAnswerComponent={RecognizeQuestionAnswer}

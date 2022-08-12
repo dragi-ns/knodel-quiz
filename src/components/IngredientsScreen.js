@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { nanoid } from 'nanoid';
 import shuffle from 'shuffle-array';
+import useTimer from './useTimer';
 import Question from './Question';
 import IngredientsQuestionAnswer from './IngredientsQuestionAnswer';
 import GameEndScreen from './GameEndScreen';
@@ -8,12 +9,14 @@ import data from '../data/data.json';
 import { useTranslation } from 'react-i18next';
 
 function IngredientsScreen({ onClick }) {
-  const { t } = useTranslation('main');
   const questions = useRef(formatData(data));
   const correctAnswersCount = useRef(0);
+  const { t } = useTranslation('main');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [ingredients, setIngredients] = useState(loadIngredients);
   const [check, setCheck] = useState(false);
+  const [stopTimer, setStopTimer] = useState(false);
+  const seconds = useTimer(0, stopTimer);
 
   useEffect(() => {
     if (!check) {
@@ -109,6 +112,9 @@ function IngredientsScreen({ onClick }) {
   }
 
   const currentQuestion = questions.current[currentIndex];
+  if (!currentQuestion && !stopTimer) {
+    setStopTimer(true);
+  }
 
   return (
     <div className="ingredients-screen-container col">
@@ -116,6 +122,7 @@ function IngredientsScreen({ onClick }) {
         <GameEndScreen
           correctCount={correctAnswersCount.current}
           totalCount={questions.current.length}
+          currentSeconds={seconds}
           onClick={onClick}
         />
       ) : (
@@ -124,6 +131,7 @@ function IngredientsScreen({ onClick }) {
             title={t('ingredients-title')}
             currentRound={currentIndex + 1}
             totalRounds={questions.current.length}
+            currentSeconds={seconds}
             questionImage={currentQuestion.image}
             questionAnswers={ingredients}
             QuestionAnswerComponent={IngredientsQuestionAnswer}

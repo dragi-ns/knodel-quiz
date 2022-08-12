@@ -6,6 +6,7 @@ function Question({
   title,
   currentRound,
   totalRounds,
+  currentSeconds,
   questionImage,
   questionAnswers,
   QuestionAnswerComponent,
@@ -18,6 +19,7 @@ function Question({
         title={title}
         currentRound={currentRound}
         totalRounds={totalRounds}
+        currentSeconds={currentSeconds}
       />
       <QuestionImage src={questionImage} />
       <QuestionAnswers

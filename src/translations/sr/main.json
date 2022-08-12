@@ -1,9 +1,10 @@
 {
     "knödel": "Knedla",
+    "time": "Vreme",
     "title": "Koliko dobro poznajete Ferdinand knedle?",
     "recognize-title": "Kako se zove knedla sa slike?",
     "ingredients-title": "Šta se nalazi u knedli sa slike?",
-    "end-title": "{{msg}} Pogodili ste {{correctCount}} od {{totalCount}} knedli! ({{percentage}}%)",
+    "end-title": "{{msg}} Pogodili ste {{correctCount}} od {{totalCount}} knedli za {{currentSeconds}}s. ({{percentage}}%)",
     "end-best": "Ferdinandtstično!",
     "end-average": "Bravo!",
     "end-worst": "Može to bolje.",
