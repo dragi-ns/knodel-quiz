@@ -216,6 +216,7 @@ body,
 .start-screen-container {
   text-align: center;
   gap: 1rem;
+  max-width: 650px;
 }
 
 .start-screen-container h2 {
@@ -295,6 +296,7 @@ body,
 .ingredients-screen-container {
   gap: 1rem;
   text-align: center;
+  max-width: 650px;
 }
 
 .ingredients-screen-container .question-indicator {

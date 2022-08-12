@@ -1,24 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState, useRef } from 'react';
 import { nanoid } from 'nanoid';
 import shuffle from 'shuffle-array';
 import Question from './Question';
-import data from '../data/data.json';
-import Loading from './Loading';
-import GameEndScreen from './GameEndScreen';
 import RecognizeQuestionAnswer from './RecognizeQuestionAnswer';
+import GameEndScreen from './GameEndScreen';
+import data from '../data/data.json';
 
 function RecognizeScreen({ onClick }) {
-  const [questions, setQuestions] = useState([]);
+  const correctAnswersCount = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    loadQuestions();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  function loadQuestions() {
-    setQuestions(formatData(data));
-  }
+  const [questions, setQuestions] = useState(formatData(data));
 
   function formatData(data) {
     function formatAnswers(correctAnswer, incorrectAnswers) {
@@ -56,7 +47,7 @@ function RecognizeScreen({ onClick }) {
     });
   }
 
-  function toggleSelect(answerId) {
+  function handleAnswerSelect(answerId) {
     setQuestions((prevQuestions) => {
       return prevQuestions.map((prevQuestion, index) => {
         return index !== currentIndex
@@ -74,58 +65,47 @@ function RecognizeScreen({ onClick }) {
   }
 
   function nextQuestion() {
+    const currentQuestion = questions[currentIndex];
+    if (
+      currentQuestion.answers.find(
+        (answer) => answer.selected && answer.correct
+      )
+    ) {
+      correctAnswersCount.current += 1;
+    }
     setCurrentIndex((prevIndex) => prevIndex + 1);
   }
 
   const currentQuestion = questions[currentIndex];
   const disableNext =
-    !currentQuestion ||
+    currentQuestion &&
     currentQuestion.answers.every((answer) => !answer.selected);
-  const isGameEnded = !currentQuestion && currentIndex >= questions.length;
-  let correctCount = 0;
-  if (isGameEnded) {
-    correctCount = questions.reduce((count, question) => {
-      if (
-        question.answers.find((answer) => answer.selected && answer.correct)
-      ) {
-        return count + 1;
-      }
-      return count;
-    }, 0);
-  }
-
   return (
     <div className="recognize-screen-container col">
-      {!isGameEnded && !currentQuestion && currentIndex > 0 ? (
-        <Loading />
+      {!currentQuestion ? (
+        <GameEndScreen
+          correctCount={correctAnswersCount.current}
+          totalCount={questions.length}
+          onClick={onClick}
+        />
       ) : (
         <>
-          {isGameEnded ? (
-            <GameEndScreen
-              correctCount={correctCount}
-              totalCount={questions.length}
-              onClick={onClick}
-            />
-          ) : (
-            <>
-              <Question
-                title="Kako se zove knedla sa slike?"
-                currentRound={currentIndex + 1}
-                totalRounds={questions.length}
-                questionImage={currentQuestion.image}
-                questionAnswers={currentQuestion.answers}
-                QuestionAnswerComponent={RecognizeQuestionAnswer}
-                onClick={toggleSelect}
-              />
+          <Question
+            title="Kako se zove knedla sa slike?"
+            currentRound={currentIndex + 1}
+            totalRounds={questions.length}
+            questionImage={currentQuestion.image}
+            questionAnswers={currentQuestion.answers}
+            QuestionAnswerComponent={RecognizeQuestionAnswer}
+            onClick={handleAnswerSelect}
+          />
 
-              <button
-                disabled={disableNext}
-                className="btn btn--primary next-btn"
-                onClick={nextQuestion}>
-                Dalje
-              </button>
-            </>
-          )}
+          <button
+            disabled={disableNext}
+            className="btn btn--primary next-btn"
+            onClick={nextQuestion}>
+            Dalje
+          </button>
         </>
       )}
     </div>

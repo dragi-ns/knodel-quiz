@@ -10,7 +10,6 @@ function ProgressiveImg({ placeholderSrc, src, ...props }) {
     img.onload = () => {
       setImgSrc(src);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [src]);
 
   return (

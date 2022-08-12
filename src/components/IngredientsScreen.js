@@ -1,30 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { nanoid } from 'nanoid';
 import shuffle from 'shuffle-array';
 import Question from './Question';
-import data from '../data/data.json';
-import Loading from './Loading';
-import GameEndScreen from './GameEndScreen';
 import IngredientsQuestionAnswer from './IngredientsQuestionAnswer';
+import GameEndScreen from './GameEndScreen';
+import data from '../data/data.json';
 
 function IngredientsScreen({ onClick }) {
-  const [questions, setQuestions] = useState([]);
+  const questions = useRef(formatData(data));
+  const correctAnswersCount = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [ingredients, setIngredients] = useState([]);
+  const [ingredients, setIngredients] = useState(loadIngredients);
   const [check, setCheck] = useState(false);
-  const [correctCount, setCorrectCount] = useState(0);
-
-  useEffect(() => {
-    loadIngredients();
-    loadQuestions();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     if (!check) {
       return;
     }
 
+    // TODO: Find a better way of checking if all selected answers are correct
+    // and that all correct answers are selected.
     if (
       ingredients
         .filter((ingredient) => ingredient.selected)
@@ -33,10 +28,18 @@ function IngredientsScreen({ onClick }) {
         .filter((ingredient) => ingredient.correct)
         .every((ingredient) => ingredient.selected)
     ) {
-      setCorrectCount((prevCount) => prevCount + 1);
+      correctAnswersCount.current += 1;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [check]);
+  }, [check, ingredients]);
+
+  function formatData(data) {
+    return shuffle(data).map((item) => {
+      return {
+        image: item.image,
+        ingredients: item.ingredients,
+      };
+    });
+  }
 
   function loadIngredients() {
     const allIngredients = [
@@ -57,7 +60,7 @@ function IngredientsScreen({ onClick }) {
         selected: false,
         correct: false,
       }));
-    setIngredients(allIngredients);
+    return allIngredients;
   }
 
   function resetIngredients() {
@@ -70,20 +73,7 @@ function IngredientsScreen({ onClick }) {
     });
   }
 
-  function loadQuestions() {
-    setQuestions(formatData(data));
-  }
-
-  function formatData(data) {
-    return shuffle(data).map((item) => {
-      return {
-        image: item.image,
-        ingredients: item.ingredients,
-      };
-    });
-  }
-
-  function toggleSelect(ingredientId) {
+  function handleAnswerToggle(ingredientId) {
     setIngredients((prevIngredients) => {
       return prevIngredients.map((ingredient) => {
         return ingredient.id !== ingredientId
@@ -94,7 +84,7 @@ function IngredientsScreen({ onClick }) {
   }
 
   function checkAnswers() {
-    const currentQuestion = questions[currentIndex];
+    const currentQuestion = questions.current[currentIndex];
     setCheck(true);
     setIngredients((prevIngredients) => {
       const newIngredients = prevIngredients.map((ingredient) => {
@@ -116,40 +106,33 @@ function IngredientsScreen({ onClick }) {
     setCheck(false);
   }
 
-  const currentQuestion = questions[currentIndex];
-  const isGameEnded = !currentQuestion && currentIndex >= questions.length;
+  const currentQuestion = questions.current[currentIndex];
 
   return (
     <div className="ingredients-screen-container col">
-      {!isGameEnded && !currentQuestion && currentIndex > 0 ? (
-        <Loading />
+      {!currentQuestion ? (
+        <GameEndScreen
+          correctCount={correctAnswersCount.current}
+          totalCount={questions.current.length}
+          onClick={onClick}
+        />
       ) : (
         <>
-          {isGameEnded ? (
-            <GameEndScreen
-              correctCount={correctCount}
-              totalCount={questions.length}
-              onClick={onClick}
-            />
-          ) : (
-            <>
-              <Question
-                title="Šta se nalazi u ovoj knedli?"
-                currentRound={currentIndex + 1}
-                totalRounds={questions.length}
-                questionImage={currentQuestion.image}
-                questionAnswers={ingredients}
-                QuestionAnswerComponent={IngredientsQuestionAnswer}
-                disabled={check}
-                onClick={toggleSelect}
-              />
-              <button
-                className="btn btn--primary next-btn"
-                onClick={check ? nextQuestion : checkAnswers}>
-                {check ? 'Dalje' : 'Proveri'}
-              </button>
-            </>
-          )}
+          <Question
+            title="Šta se nalazi u ovoj knedli?"
+            currentRound={currentIndex + 1}
+            totalRounds={questions.current.length}
+            questionImage={currentQuestion.image}
+            questionAnswers={ingredients}
+            QuestionAnswerComponent={IngredientsQuestionAnswer}
+            disabled={check}
+            onClick={handleAnswerToggle}
+          />
+          <button
+            className="btn btn--primary next-btn"
+            onClick={check ? nextQuestion : checkAnswers}>
+            {check ? 'Dalje' : 'Proveri'}
+          </button>
         </>
       )}
     </div>
