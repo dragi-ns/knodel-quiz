@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 import { nanoid } from 'nanoid';
 import { useTranslation } from 'react-i18next';
+import { useTimer } from '../hooks';
 import shuffle from 'shuffle-array';
-import useTimer from './useTimer';
 import Question from './Question';
 import RecognizeQuestionAnswer from './RecognizeQuestionAnswer';
 import GameEndScreen from './GameEndScreen';

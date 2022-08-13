@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function useTimer(initialValue, stopValue) {
+export function useTimer(initialValue, stopValue) {
   const [seconds, setSeconds] = useState(initialValue);
 
   useEffect(() => {
@@ -15,5 +15,3 @@ function useTimer(initialValue, stopValue) {
   }, [stopValue]);
   return seconds;
 }
-
-export default useTimer;

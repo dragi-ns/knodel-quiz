@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { nanoid } from 'nanoid';
+import { useTranslation } from 'react-i18next';
+import { useTimer } from '../hooks';
 import shuffle from 'shuffle-array';
-import useTimer from './useTimer';
 import Question from './Question';
 import IngredientsQuestionAnswer from './IngredientsQuestionAnswer';
 import GameEndScreen from './GameEndScreen';
 import data from '../data/data.json';
-import { useTranslation } from 'react-i18next';
 
 function IngredientsScreen({ onClick }) {
   const questions = useRef(formatData(data));
