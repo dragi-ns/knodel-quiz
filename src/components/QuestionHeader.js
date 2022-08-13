@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { formatSeconds } from '../utils';
 
 function QuestionHeader({ title, currentRound, totalRounds, currentSeconds }) {
   const { t } = useTranslation('main');
@@ -11,7 +12,7 @@ function QuestionHeader({ title, currentRound, totalRounds, currentSeconds }) {
           {t('knödel')}: {currentRound}/{totalRounds}
         </span>
         <span className="bold">
-          {t('time')}: {currentSeconds}s
+          {t('time')}: {formatSeconds(currentSeconds)}
         </span>
       </p>
     </>

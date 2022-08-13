@@ -1,5 +1,6 @@
 import ReactConfetti from 'react-confetti';
 import { useTranslation } from 'react-i18next';
+import { formatSeconds } from '../utils';
 
 function GameEndScreen({ correctCount, totalCount, currentSeconds, onClick }) {
   const { t } = useTranslation('main');
@@ -11,11 +12,11 @@ function GameEndScreen({ correctCount, totalCount, currentSeconds, onClick }) {
   function generateMsg(percentage) {
     let msg;
     if (percentage >= 90) {
-      msg = t('end-best');
+      msg = 'end-best';
     } else if (percentage >= 70) {
-      msg = t('end-average');
+      msg = 'end-average';
     } else {
-      msg = t('end-worst');
+      msg = 'end-worst';
     }
     return msg;
   }
@@ -26,15 +27,15 @@ function GameEndScreen({ correctCount, totalCount, currentSeconds, onClick }) {
   return (
     <>
       {percentage >= 90 && <ReactConfetti />}
-      <h2>
+      <h2 className="text-shadow">{t(msg)}</h2>
+      <p className="bold text-shadow">
         {t('end-title', {
-          msg,
           correctCount,
           totalCount,
-          currentSeconds,
+          time: formatSeconds(currentSeconds),
           percentage,
         })}
-      </h2>
+      </p>
       <button className="btn btn--primary play-again-btn" onClick={onClick}>
         {t('play-again-btn')}
       </button>
