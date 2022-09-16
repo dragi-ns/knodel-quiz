@@ -1,143 +1,110 @@
 [
-    {
-        "name": "sljiva",
-        "image": "knedla1.jpg",
-        "ingredients": [
-            "sljiva"
-        ]
-    },
-    {
-        "name": "kajsija",
-        "image": "knedla2.jpg",
-        "ingredients": [
-            "kajsija"
-        ]
-    },
-    {
-        "name": "nutela",
-        "image": "knedla3.jpg",
-        "ingredients": [
-            "nutela",
-            "plazma"
-        ]
-    },
-    {
-        "name": "rafaelo",
-        "image": "knedla4.jpg",
-        "ingredients": [
-            "bela-cokolada",
-            "kokos",
-            "lesnik"
-        ]
-    },
-    {
-        "name": "slatka-mala",
-        "image": "knedla5.jpg",
-        "ingredients": [
-            "krem-od-pomorandze",
-            "crna-cokolada",
-            "zapeceni-lesnik"
-        ]
-    },
-    {
-        "name": "malina-slatki-sir",
-        "image": "knedla6.jpg",
-        "ingredients": [
-            "malina",
-            "slatki-sir"
-        ]
-    },
-    {
-        "name": "coko-malina",
-        "image": "knedla7.jpg",
-        "ingredients": [
-            "crna-cokolada",
-            "malina",
-            "oreo-keks"
-        ]
-    },
-    {
-        "name": "coko-visnja",
-        "image": "knedla8.jpg",
-        "ingredients": [
-            "cokolada",
-            "visnja"
-        ]
-    },
-    {
-        "name": "amareti",
-        "image": "knedla9.jpg",
-        "ingredients": [
-            "badem-krem",
-            "badem-jezgro",
-            "amaretti"
-        ]
-    },
-    {
-        "name": "karamela",
-        "image": "knedla10.jpg",
-        "ingredients": [
-            "karamela",
-            "mlecna-belgijska-cokolada",
-            "kikiriki",
-            "med",
-            "orasasti-plodovi"
-        ]
-    },
-    {
-        "name": "marakuja",
-        "image": "knedla11.jpg",
-        "ingredients": [
-            "marakuja",
-            "divlja-kupina",
-            "maskarpone-sir"
-        ]
-    },
-    {
-        "name": "kraljica-marija",
-        "image": "knedla12.jpg",
-        "ingredients": [
-            "orah-krem",
-            "jezgro-oraha",
-            "kakao",
-            "karamelizovani-secer",
-            "zapeceni-lesnik",
-            "badem"
-        ]
-    },
-    {
-        "name": "pistaci",
-        "image": "knedla13.jpg",
-        "ingredients": [
-            "pasta-od-pistaca",
-            "mleveni-pistaci",
-            "malina"
-        ]
-    },
-    {
-        "name": "princeza-sa-madagaskara",
-        "image": "knedla14.jpg",
-        "ingredients": [
-            "burbon-vanila-sa-madagaskara",
-            "maskarpone-sir",
-            "bela-cokolada",
-            "francuski-keks"
-        ]
-    },
-    {
-        "name": "carska",
-        "image": "knedla15.jpg",
-        "ingredients": [
-            "tri-vrste-belgijske-cokolade",
-            "francuski-keks"
-        ]
-    },
-    {
-        "name": "sumska-jagoda",
-        "image": "knedla16.jpg",
-        "ingredients": [
-            "sumske-jagode",
-            "bela-belgijska-cokolada"
-        ]
-    }
+  {
+    "name": "sljiva",
+    "image": "knedla1.jpg",
+    "ingredients": ["sljiva"]
+  },
+  {
+    "name": "kajsija",
+    "image": "knedla2.jpg",
+    "ingredients": ["kajsija"]
+  },
+  {
+    "name": "nutela",
+    "image": "knedla3.jpg",
+    "ingredients": ["nutela", "plazma"]
+  },
+  {
+    "name": "kokos",
+    "image": "knedla4.jpg",
+    "ingredients": ["bela-cokolada", "kokos", "lesnik"]
+  },
+  {
+    "name": "coko-narandza",
+    "image": "knedla5.jpg",
+    "ingredients": ["krem-od-pomorandze", "crna-cokolada", "zapeceni-lesnik"]
+  },
+  {
+    "name": "malina-slatki-sir",
+    "image": "knedla6.jpg",
+    "ingredients": ["malina", "slatki-sir"]
+  },
+  {
+    "name": "coko-malina",
+    "image": "knedla7.jpg",
+    "ingredients": ["crna-cokolada", "malina", "oreo-keks"]
+  },
+  {
+    "name": "coko-visnja",
+    "image": "knedla8.jpg",
+    "ingredients": ["crna-cokolada", "visnja"]
+  },
+  {
+    "name": "amareti",
+    "image": "knedla9.jpg",
+    "ingredients": ["badem-krem", "badem-jezgro", "amaretti"]
+  },
+  {
+    "name": "karamela",
+    "image": "knedla10.jpg",
+    "ingredients": [
+      "karamela",
+      "mlecna-belgijska-cokolada",
+      "kikiriki",
+      "med",
+      "orasasti-plodovi"
+    ]
+  },
+  {
+    "name": "marakuja",
+    "image": "knedla11.jpg",
+    "ingredients": ["marakuja", "divlja-kupina", "maskarpone-sir"]
+  },
+  {
+    "name": "kraljica-marija",
+    "image": "knedla12.jpg",
+    "ingredients": [
+      "orah-krem",
+      "jezgro-oraha",
+      "kakao",
+      "karamelizovani-secer",
+      "zapeceni-lesnik",
+      "badem"
+    ]
+  },
+  {
+    "name": "pistaci",
+    "image": "knedla13.jpg",
+    "ingredients": ["pasta-od-pistaca", "mleveni-pistaci", "malina"]
+  },
+  {
+    "name": "princeza-sa-madagaskara",
+    "image": "knedla14.jpg",
+    "ingredients": [
+      "burbon-vanila-sa-madagaskara",
+      "maskarpone-sir",
+      "bela-cokolada",
+      "francuski-keks"
+    ]
+  },
+  {
+    "name": "carska",
+    "image": "knedla15.jpg",
+    "ingredients": ["tri-vrste-belgijske-cokolade", "francuski-keks"]
+  },
+  {
+    "name": "sumska-jagoda",
+    "image": "knedla16.jpg",
+    "ingredients": ["sumske-jagode", "bela-belgijska-cokolada"]
+  },
+  {
+    "name": "yuzu-borovnica",
+    "image": "knedla17.jpg",
+    "ingredients": ["yuzu", "borovnica", "bela-cokolada", "maskarpone-sir"]
+  },
+  {
+    "name": "crna-malina",
+    "image": "knedla18.jpg",
+    "ingredients": ["crna-malina", "ruby-cokolada", "slatka-pavlaka"]
+  }
 ]
